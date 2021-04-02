@@ -73,15 +73,23 @@ d3.csv("scatterdata.csv", rowConverter).then(function(data) {
         //Update the tooltip position and value 
             d3.select("#tooltip")
             .style("left", xpos + "px") 
-            .style("top", ypos + "px") 
-            .select("#country").text(d.country)
-            .select("#population").text(d.pop)
-            .select("#gdp").text(d.gdp)
-            .select("#epc").text(d.epc)
+            .style("top", ypos + "px")
+            .select("#country").text(d.country);
+
+            d3.select("#tooltip")
+            .select("#population").text(d.pop);
+
+            d3.select("#tooltip")
+            .select("#gdp").text(d.gdp);
+
+            d3.select("#tooltip")
+            .select("#epc").text(d.epc);
+
+            d3.select("#tooltip")
             .select("#total").text(d.ec);
-            console.log(tool);
+            console.log(d);
         //Show the tooltip
-        d3.select("#tooltip")
+            d3.select("#tooltip")
             .classed("hidden", false);
         })
         .on("mouseout", function() {
